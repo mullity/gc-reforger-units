@@ -15,6 +15,42 @@ Turret : "{4AD877DEA242E512}Prefabs/Weapons/Core/Turret_Base.et" {
     }
    }
   }
+  TF_Display_CameraController "{68E10C1B05BCD283}" {
+   Enabled 0
+  }
+  TF_Display_VehicleController "{68E10C1B3F1DC9F3}" {
+   Enabled 0
+  }
+  TF_SACLOS_MissileController "{68E10C1859B1EE02}" {
+   Enabled 0
+   m_bDeactivePrevMissile 1
+   m_bIsATGM 1
+   m_bCanReloadWhenActive 0
+  }
+  TF_WeaponReloadComponent "{68E10C1B877D810A}" {
+   Enabled 0
+   m_EmptyWeapon "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et"
+   m_ImpulsTo PointInfo "{68E10C1BD39429F2}" {
+    PivotID "v_gun_02"
+   }
+   m_DetachEmptyPoint PointInfo "{68E10C1BC23CE681}" {
+    PivotID "v_gun_02"
+   }
+   m_DetachLoadedPoint PointInfo "{68E10C1BEBF5110C}" {
+    PivotID "v_gun_02"
+   }
+   m_fImpulseStrength 1.5
+   m_SupportedMagazine MagazineWellKornet "{68E10C1BB08D4B13}" {
+   }
+   m_DetachSound SCR_AudioSourceConfiguration "{68E10C1BABBEB223}" {
+    m_sSoundProject "{EEAE2427DD990D12}Sounds/Weapons/AircraftWeapons/RocketPods/Weapons_RocketPods_Generic_Handling.acp"
+    m_sSoundEventName "SOUND_UNLOAD"
+   }
+   m_AttachSound SCR_AudioSourceConfiguration "{68E10C1BA3CE4E2C}" {
+    m_sSoundProject "{EEAE2427DD990D12}Sounds/Weapons/AircraftWeapons/RocketPods/Weapons_RocketPods_Generic_Handling.acp"
+    m_sSoundEventName "SOUND_PYLON_ATTACH"
+   }
+  }
   TurretComponent "{5E52AE0A31173B5F}" {
    components {
     SCR_2DSightsComponent "{5E52AE0A31173B59}" {
@@ -56,6 +92,26 @@ Turret : "{4AD877DEA242E512}Prefabs/Weapons/Core/Turret_Base.et" {
   }
   WeaponSlotComponent "{64E93AAE9DD3BC5B}" {
    WeaponType RocketLauncher
+  }
+  ActionsManagerComponent "{51ACD09C7181BA0B}" {
+   ActionContexts {
+    UserActionContext "{68E10C18F44BFAFC}" {
+     ContextName "reload"
+     Position PointInfo "{68E10C193E81083A}" {
+     }
+    }
+   }
+   additionalActions {
+    TF_Action_ReloadSaclos "{68E10C19187E7D87}" {
+     ParentContextList {
+      "reload"
+     }
+     UIInfo UIInfo "{686D6433F363B926}" {
+      Name "reload"
+     }
+     m_iWeaponSlotIndex 3
+    }
+   }
   }
  }
  coords 2.756 -2.316 -1.338

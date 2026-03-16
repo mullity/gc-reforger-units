@@ -1,6 +1,27 @@
 Turret : "{8021A4D1ADFCF506}Prefabs/Vehicles/Tracked/BMP1/VehParts/Turret/BMP1_Turret.et" {
  ID "51ACD0965653D003"
  components {
+  TF_Display_CameraController "{68E10C1B05BCD283}" {
+   Enabled 1
+  }
+  TF_Display_VehicleController "{68E10C1B3F1DC9F3}" {
+   Enabled 1
+  }
+  TF_SACLOS_MissileController "{68E10C1859B1EE02}" {
+   Enabled 1
+  }
+  TF_WeaponReloadComponent "{68E10C1B877D810A}" {
+   Enabled 1
+   m_ImpulsTo PointInfo "{68E10C1BD39429F2}" {
+    Offset 0.2383 0 0
+   }
+   m_DetachEmptyPoint PointInfo "{68E10C1BC23CE681}" {
+    Offset -0.1826 0 0
+   }
+   m_DetachLoadedPoint PointInfo "{68E10C1BEBF5110C}" {
+    Offset -0.1826 0 0
+   }
+  }
   TurretComponent "{5E52AE0A31173B5F}" {
    components {
     SCR_2DSightsComponent "{5E52AE0A31173B59}" {
@@ -12,6 +33,55 @@ Turret : "{8021A4D1ADFCF506}Prefabs/Vehicles/Tracked/BMP1/VehParts/Turret/BMP1_T
      m_sReticleGlowTexture "{CF4D95A63CAE2FCB}UI/Textures/Sights/1PN22/1PN22M2-glow_UI.edds"
      m_fObjectiveFov 15
      m_fMagnification 6
+    }
+   }
+  }
+  WCS_Armament_LoadoutComponent "{631B65CED86F63D9}" {
+   Enabled 0
+  }
+  WCS_Armament_VehicleCameraComponent "{64F41693693EFC09}" {
+   Enabled 0
+  }
+  WCS_Armament_VehicleWeaponStationComponent "{631B6C431BF4FE01}" {
+   Enabled 0
+  }
+  TF_WeaponSlotComponent "{68E10C1754F8621E}" {
+   SignalsSourceAccess SignalsSourceAccessClass "{68E10C17664068D7}" {
+    signalsSuffix "Turret"
+   }
+   WeaponType RocketLauncher
+   AttachType InventoryStorageSlot "{68E10C1599EC05BA}" {
+    PivotID "v_gun_02"
+    DisablePhysicsInteraction 1
+    ActivatePhysicsOnDetaching 1
+    DeactivatePhysicsOnAtaching 1
+   }
+   WeaponTemplate "{94EB5CB0A4827C57}Prefabs/Weapons/HeavyWeapons/9K135/Vehicle_Launcher_9K135.et"
+   WeaponSlotIndex 3
+   m_bAllowAttachWhenEmpty 1
+  }
+  WeaponSlotComponent "{64E93AAE9DD3BC5B}" {
+   Enabled 0
+  }
+  ActionsManagerComponent "{51ACD09C7181BA0B}" {
+   ActionContexts {
+    UserActionContext "{68E10C18F44BFAFC}" {
+     ContextName "Reload"
+     Position PointInfo "{68E10C193E81083A}" {
+      PivotID "v_gun_02"
+      Offset 0 0.2357 -0.0437
+     }
+    }
+   }
+   additionalActions {
+    TF_Action_ReloadSaclos "{68E10C19187E7D87}" {
+     ParentContextList {
+      "Reload"
+     }
+     UIInfo UIInfo "{686D6433F363B926}" {
+      Name "Reload"
+     }
+     Duration 2
     }
    }
   }
