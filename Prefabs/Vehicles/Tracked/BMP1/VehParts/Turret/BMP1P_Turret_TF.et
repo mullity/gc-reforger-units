@@ -1,0 +1,133 @@
+Turret : "{8021A4D1ADFCF506}Prefabs/Vehicles/Tracked/BMP1/VehParts/Turret/BMP1_Turret.et" {
+ ID "51ACD0965653D003"
+ components {
+  BaseWeaponManagerComponent "{51ACD09C55D6C1AD}" {
+  }
+  TF_Display_CameraController "{68DF2945EE7516A7}" {
+  }
+  TF_Display_VehicleController "{68DF2945E143E9CD}" {
+  }
+  TF_SACLOS_MissileController "{68DF29444F7C08C1}" {
+   m_bDeactivePrevMissile 1
+   m_bIsATGM 1
+   m_bCanReloadWhenActive 0
+  }
+  TF_WeaponRecoilComponent "{68DF29446EC6654A}" {
+   Enabled 0
+   m_fImpulse 200
+  }
+  TF_WeaponReloadComponent "{68DF2944D6FB8B5D}" {
+   m_EmptyWeapon "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et"
+   m_ImpulsTo PointInfo "{68DF294739E39B31}" {
+    PivotID "v_gun_02"
+    Offset 0.3335 0.2252 -0.6427
+   }
+   m_DetachEmptyPoint PointInfo "{68DF2949133592E9}" {
+    PivotID "v_gun_02"
+    Offset 0 0.2291 0.1117
+   }
+   m_DetachLoadedPoint PointInfo "{68DF2949059A2C93}" {
+    PivotID "v_gun_02"
+    Offset 0 0.2291 0.1117
+   }
+   m_fImpulseStrength 1.5
+   m_SupportedMagazine MagazineWellKornet "{68DF294F7676E4E9}" {
+   }
+   m_DetachSound SCR_AudioSourceConfiguration "{68DF2941C56B212F}" {
+    m_sSoundProject "{EEAE2427DD990D12}Sounds/Weapons/AircraftWeapons/RocketPods/Weapons_RocketPods_Generic_Handling.acp"
+    m_sSoundEventName "SOUND_UNLOAD"
+    m_eFlags Static
+   }
+   m_AttachSound SCR_AudioSourceConfiguration "{68DF294F6C70DBF8}" {
+    m_sSoundProject "{EEAE2427DD990D12}Sounds/Weapons/AircraftWeapons/RocketPods/Weapons_RocketPods_Generic_Handling.acp"
+    m_sSoundEventName "SOUND_PYLON_ATTACH"
+   }
+  }
+  TurretControllerComponent "{51ACD09C61C183E4}" {
+   LimitsVert -4 30
+  }
+  TurretComponent "{5E52AE0A31173B5F}" {
+   components {
+    SCR_2DSightsComponent "{5E52AE0A31173B59}" {
+     SightsFOVInfo SCR_SightsZoomFOVInfo "{5E52AE0A31173B5A}" {
+      m_fBaseZoom 6.7
+      m_fZoomMax 6.7
+     }
+     m_fObjectiveFov 7
+     m_fMagnification 6.7
+    }
+   }
+  }
+  WCS_Armament_LoadoutComponent "{631B65CED86F63D9}" {
+   Enabled 0
+   m_ArmamentGroups {
+    WCS_ArmamentWeaponGroup "{631B65CEC82D33F6}" {
+     isEnabled 0
+     prefab "{D8164D5681A8FE4D}Prefabs/Weapons/AircraftWeapons/MissilePods/Pod_9M113.et"
+     weaponsInfo {
+      WCS_ArmamentWeaponInfo "{631B65CF475E623B}" {
+       Position PointInfo rocket {
+        PivotID "v_gun_02"
+       }
+      }
+     }
+    }
+   }
+  }
+  WCS_Armament_VehicleCameraComponent "{64F41693693EFC09}" {
+   Enabled 0
+  }
+  WCS_Armament_VehicleWeaponStationComponent "{631B6C431BF4FE01}" {
+   Enabled 0
+  }
+  TF_WeaponSlotComponent "{68DF295645B47CA4}" {
+   WeaponType RocketLauncher
+   AttachType InventoryStorageSlot "{68DF29566BEB1CC2}" {
+    PivotID "v_gun_02"
+    DisablePhysicsInteraction 1
+    ActivatePhysicsOnDetaching 1
+    DeactivatePhysicsOnAtaching 1
+   }
+   WeaponTemplate "{94EB5CB0A4827C57}Prefabs/Weapons/HeavyWeapons/9K135/Vehicle_Launcher_9K135.et"
+   WeaponSlotIndex 3
+   m_bAllowAttachWhenEmpty 1
+  }
+  SlotManagerComponent "{5E52AE0A31173B6B}" {
+   Slots {
+    EntitySlotInfo Backing {
+     Prefab "{8AC34F414573FD57}Prefabs/Vehicles/Tracked/BMP1/VehParts/Turret/BMP1P_Turret_Back.et"
+    }
+   }
+  }
+  WeaponSlotComponent "{64E93AAE9DD3BC5B}" {
+   Enabled 0
+  }
+  ActionsManagerComponent "{51ACD09C7181BA0B}" {
+   ActionContexts {
+    UserActionContext "{68DF294844DFC129}" {
+     ContextName "Reload"
+     Position PointInfo "{686D64331F851123}" {
+      PivotID "v_gun_02"
+      Offset 0 0.2357 -0.0437
+     }
+    }
+   }
+   additionalActions {
+    TF_Action_ReloadSaclos "{68E10C1AB503FD90}" {
+     ParentContextList {
+      "Reload"
+     }
+     UIInfo UIInfo "{686D6433F363B926}" {
+      Name "Reload"
+     }
+     Duration 2
+     m_iWeaponSlotIndex 3
+    }
+    TF_Action_ReloadSaclos "{68E10C19187E7D87}" {
+     ParentContextList {
+     }
+    }
+   }
+  }
+ }
+}

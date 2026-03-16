@@ -1,0 +1,42 @@
+Tank : "{1DC01AAACFFA8B63}Prefabs/Vehicles/Tracked/BMP1/BMP1_base.et" {
+ ID "BBCBA43A9778AE21"
+ components {
+  SCR_EditableVehicleComponent "{50DEB7C26B5EB312}" {
+   m_UIInfo SCR_EditableVehicleUIInfo "{5298E609432D192D}" {
+    Name "#SPC-Vehicle_BMP1P_Name"
+    m_Image "{76AE6EA5E110D238}UI/Textures/EditorPreviews/Vehicles/Tracked/BMP1/BMP1P.edds"
+    m_EntityBudgetCost {
+     SCR_EntityBudgetValue "{5EDC86E4AF8908B6}" {
+      m_Value 1750
+     }
+    }
+   }
+  }
+  SCR_UniversalInventoryStorageComponent "{5E529ED09B647D03}" {
+   MultiSlots {
+    MultiSlotConfiguration "{64F343DF231043AD}" {
+     SlotTemplate InventoryStorageSlot PKMammunition {
+      Prefab "{4CB231C30C2BF712}Prefabs/Weapons/Ammo/Ammo_Missile_9M113.et"
+     }
+    }
+   }
+  }
+  SlotManagerComponent "{55BCE45E438E4CFF}" {
+   Slots {
+    RegisteringComponentSlotInfo Turret {
+     Prefab "{8D156898FAFA2CAD}Prefabs/Vehicles/Tracked/BMP1/VehParts/Turret/BMP1P_Turret.et"
+    }
+    RegisteringComponentSlotInfo Commander_Turret {
+     MergePhysics 1
+     Prefab "{E83FE945143E9FCC}Prefabs/Vehicles/Tracked/BMP1/VehParts/CommanderTurret/BMP1_Commander_Turret.et"
+     DisablePhysicsInteraction 1
+     RegisterActions 1
+     RegisterDamage 1
+     RegisterControllers 1
+     RegisterWeapons 1
+     RegisterCompartments 1
+    }
+   }
+  }
+ }
+}

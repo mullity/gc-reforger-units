@@ -1,0 +1,12 @@
+Tank : "{766A7C072EB1339F}Prefabs/Vehicles/Tracked/BMP1/BMP1P_base_TF.et" {
+ ID "BBCBA43A9778AE21"
+ components {
+  SlotManagerComponent "{55BCE45E438E4CFF}" {
+   Slots {
+    RegisteringComponentSlotInfo Turret {
+     Prefab "{2B20A6CC09A8B5F8}Prefabs/Vehicles/Tracked/BMP1/VehParts/Turret/BMP1P_Turret_TF_VL.et"
+    }
+   }
+  }
+ }
+}
