@@ -78,9 +78,8 @@ Turret : "{8021A4D1ADFCF506}Prefabs/Vehicles/Tracked/BMP1/VehParts/Turret/BMP1_T
   }
   ActionsManagerComponent "{51ACD09C7181BA0B}" {
    ActionContexts {
-    UserActionContext "{68E10C13C9EF7162}" {
-     ContextName "Reload"
-     Position PointInfo "{68E10C13C9EF7156}" {
+    UserActionContext "{68E10C18F44BFAFC}" {
+     Position PointInfo "{68E10C193E81083A}" {
       PivotID "v_gun_02"
       Offset 0 0.2357 -0.0437
      }
@@ -88,18 +87,7 @@ Turret : "{8021A4D1ADFCF506}Prefabs/Vehicles/Tracked/BMP1/VehParts/Turret/BMP1_T
    }
    additionalActions {
     TF_Action_ReloadSaclos "{68E10C19187E7D87}" {
-     ParentContextList {
-     }
-    }
-    TF_Action_ReloadSaclos "{68E10C13C9EF7149}" {
-     ParentContextList {
-      "Reload"
-     }
-     UIInfo UIInfo "{68E10C13C9EF714A}" {
-      Name "Reload"
-     }
      Duration 2
-     m_iWeaponSlotIndex 3
     }
    }
   }
