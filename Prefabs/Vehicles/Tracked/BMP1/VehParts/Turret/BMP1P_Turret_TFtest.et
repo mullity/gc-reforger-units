@@ -3,14 +3,14 @@ Turret : "{8021A4D1ADFCF506}Prefabs/Vehicles/Tracked/BMP1/VehParts/Turret/BMP1_T
  components {
   BaseWeaponManagerComponent "{51ACD09C55D6C1AD}" {
   }
-  TF_Display_CameraController "{68DF2945EE7516A7}" {
+  TF_Display_CameraController "{68E10C13C9EF71B4}" {
   }
-  TF_Display_VehicleController "{68DF2945E143E9CD}" {
+  TF_Display_VehicleController "{68E10C13C9EF7184}" {
   }
   TF_SACLOS_MissileController "{68E10C1859B1EE02}" {
    Enabled 1
   }
-  TF_WeaponRecoilComponent "{68DF29446EC6654A}" {
+  TF_WeaponRecoilComponent "{68E10C13C9EF7187}" {
    Enabled 0
    m_fImpulse 200
   }
@@ -54,7 +54,7 @@ Turret : "{8021A4D1ADFCF506}Prefabs/Vehicles/Tracked/BMP1/VehParts/Turret/BMP1_T
   WCS_Armament_VehicleWeaponStationComponent "{631B6C431BF4FE01}" {
    Enabled 0
   }
-  TF_WeaponSlotComponent "{68DF295645B47CA4}" {
+  TF_WeaponSlotComponent "{68E10C13C9EF716C}" {
    WeaponType RocketLauncher
    AttachType InventoryStorageSlot "{68DF29566BEB1CC2}" {
     PivotID "v_gun_02"
@@ -78,9 +78,9 @@ Turret : "{8021A4D1ADFCF506}Prefabs/Vehicles/Tracked/BMP1/VehParts/Turret/BMP1_T
   }
   ActionsManagerComponent "{51ACD09C7181BA0B}" {
    ActionContexts {
-    UserActionContext "{68DF294844DFC129}" {
+    UserActionContext "{68E10C13C9EF7162}" {
      ContextName "Reload"
-     Position PointInfo "{686D64331F851123}" {
+     Position PointInfo "{68E10C13C9EF7156}" {
       PivotID "v_gun_02"
       Offset 0 0.2357 -0.0437
      }
@@ -91,11 +91,11 @@ Turret : "{8021A4D1ADFCF506}Prefabs/Vehicles/Tracked/BMP1/VehParts/Turret/BMP1_T
      ParentContextList {
      }
     }
-    TF_Action_ReloadSaclos "{68E10C1AB503FD90}" {
+    TF_Action_ReloadSaclos "{68E10C13C9EF7149}" {
      ParentContextList {
       "Reload"
      }
-     UIInfo UIInfo "{686D6433F363B926}" {
+     UIInfo UIInfo "{68E10C13C9EF714A}" {
       Name "Reload"
      }
      Duration 2
